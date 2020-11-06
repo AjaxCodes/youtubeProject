@@ -1,64 +1,64 @@
-const {Video, validate} = require('../models/video'); 
+const {Comment, validate} = require('../models/Comment'); 
 const express = require('express');
 const router = express.Router();
 
-router.post('http://localhost:3000/api/videos/add', async (req, res) => { 
+router.post('http://localhost:3000/api/comments/add', async (req, res) => { 
     try {
         const { error } = validate(req.body);
         if (error)
             return res.status(400).send(error);
 
-        const Video = new Video({
+        const Comment = new Comment({
             name: req.body.name,
             discription: req.body.discription,
             category: req.body.category,
         });
     
-        await video.save();
+        await comment.save();
 
-        return res.send(video);
+        return res.send(comment);
 
     }   catch (ex) {
         return res.status(500).send(`Internal Server Error: ${ex}`);
     } 
 });
 
-router.get('http://localhost:3000/api/videos', async (req, res) => { try {
-    const videos = await Video.find();
-    return res.send(videos); } catch (ex) {
+router.get('http://localhost:3000/api/comments', async (req, res) => { try {
+    const comments = await Comment.find();
+    return res.send(comments); } catch (ex) {
     return res.status(500).send(`Internal Server Error: ${ex}`); }
     });
 
 router.put('/:id', async (req, res) => { try {
         const { error } = validate(req.body);
         if (error) return res.status(400).send(error);
-        const video = await Video.findByIdAndUpdate( req.params.id,{
+        const comment = await Comment.findByIdAndUpdate( req.params.id,{
             name: req.body.name,
             discription: req.body.discription,
             category: req.body.category, 
         },
         { new: true }
     );
-    if (!video)
+    if (!comment)
         return res.status(400).send(`The video with id "${req.params.id}" does not exist.`);
                 
-        await video.save();
+        await comment.save();
                 
-        return res.send(video); } catch (ex) {
+        return res.send(comment); } catch (ex) {
              
             return res.status(500).send(`Internal Server Error: ${ex}`); 
         }
 }); 
 
-router.delete('http://localhost:3000/api/videos/:id', async (req, res) => { 
+router.delete('http://localhost:3000/api/comments/:id', async (req, res) => { 
     try {
 
-    const video = await Video.findByIdAndRemove(req.params.id);
+    const comment = await Comment.findByIdAndRemove(req.params.id);
 
-    if (!video)
+    if (!comment)
         return res.status(400).send(`The video with id "${req.params.id}" does not exist.`);
         
-        return res.send(video);
+        return res.send(comment);
     } catch (ex) {
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }

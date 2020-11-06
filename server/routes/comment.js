@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
 
-const videoSchema = new mongoose.Schema({ 
+const commentSchema = new mongoose.Schema({ 
     name: { type: String, required: true, minlength: 2, maxlength: 50 },
     discription: { type: String, required: true },
     category: { type: String, required: true, minlength: 5, maxlength: 50 },
@@ -9,19 +9,19 @@ const videoSchema = new mongoose.Schema({
 });
 
 
-function validateVideo(video) {
+function validateComment(comment) {
     const schema = Joi.object({
     name: Joi.string().min(2).max(50).required(),
     description: Joi.string().required(),
     category: Joi.string().min(5).max(50).required(),
     });
 
-return schema.validate(video); 
+return schema.validate(comment); 
 }
     //exports.Video = Video;
-    exports.validate = validateVideo;
+    exports.validate = validateComment;
     //exports.videoSchema = videoSchema;
 
 
-module.exports.videoSchema = videoSchema;
-module.exports.Video = mongoose.model('Video', videoSchema);
+module.exports.commentSchema = commentSchema;
+module.exports.Comment = mongoose.model('Comment', commentSchema);
