@@ -13,7 +13,7 @@ function Header(){
     return(
     <div className="header">
          
-         <div className="header__left">
+        <div className="header__left">
             <MenuIcon />
             <img className="header__logo" 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRTP5biS4Ni9KSicXxzO081B6Y1voCXjBQNiw&usqp=CAU" 
@@ -23,19 +23,19 @@ function Header(){
         <div className="header__input">
             <input placeholder="Search" type="text" />
             <SearchIcon  className="header__inputButton"/>
-       </div>
+        </div>
 
-       <div className="header__icons">
-         <VideoCallIcon className="header__icon"/> 
+        <div className="header__icons">
+            <VideoCallIcon className="header__icon"/> 
             <AppsIcon className="header__icon"/> 
             <NotificationsIcon className="header__icon"/>
             <Avatar/>
-       </div>
-       
+        </div>
+
     </div>
           
     )
 
 }
 
-export default Header
+export default Header;
