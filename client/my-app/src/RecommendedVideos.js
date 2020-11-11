@@ -5,6 +5,7 @@ import "./RecommendedVideos.css";
 function RecommendedVideos(){
     return(
         <div className="RecommendedVideos">
+            <h2>Recomended</h2>
 
 
 

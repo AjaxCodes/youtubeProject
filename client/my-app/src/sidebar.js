@@ -16,15 +16,16 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 function Sidebar(){
     return(
         <div className="sidebar">
-            <SidebarRow Icon={HomeIcon} title="Home"/>
-            <SidebarRow Icon={WhatshotIcon} title="Trending"/>
-            <SidebarRow Icon={SubscriptionsIcon} title="Subscription"/>
-            <SidebarRow Icon={LocalLibraryIcon} title="Library"/>
-            <SidebarRow Icon={TimelineIcon} title="History"/>
-            <SidebarRow Icon={VideoLibraryIcon} title="Your Videos"/>
-            <SidebarRow Icon={WatchLaterIcon} title="Watch Later"/>
-            <SidebarRow Icon={ThumbUpAltIcon} title="Liked Videos"/>
-            <SidebarRow Icon={VisibilityIcon} title="Show More"/>
+            <SidebarRow selected Icon={HomeIcon} title="Home"/>
+            <SidebarRow  Icon={WhatshotIcon} title="Trending"/>
+            <SidebarRow  Icon={SubscriptionsIcon} title="Subscription"/>
+            <hr/>
+            <SidebarRow  Icon={LocalLibraryIcon} title="Library"/>
+            <SidebarRow  Icon={TimelineIcon} title="History"/>
+            <SidebarRow  Icon={VideoLibraryIcon} title="Your Videos"/>
+            <SidebarRow  Icon={WatchLaterIcon} title="Watch Later"/>
+            <SidebarRow  Icon={ThumbUpAltIcon} title="Liked Videos"/>
+            <SidebarRow  Icon={VisibilityIcon} title="Show More"/>
             
             
 
