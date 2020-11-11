@@ -1,8 +1,9 @@
 import React from "react";
 import './App.css';
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar";
 import RecommendedVideos from "./RecommendedVideos";
+import Comments from './comments';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div className="app__page">
       <Sidebar />
       <RecommendedVideos /> 
+      <Comments />
       </div>
     </div>
   );
