@@ -2,8 +2,10 @@ import React , {useState}from 'react'
 import axios from 'axios';
 
 
+
 function Comments(props) {
- 
+    const [Comment, setComment] = useState("")
+
         axios.post('http://localhost:3000/api/comments/add')
         .then(response=> {
             if(response.data.success) {
@@ -13,7 +15,7 @@ function Comments(props) {
                 alert('Failed to save Comment')
             }
         })
-    }
+    
 
     return (
         <div>
@@ -22,8 +24,7 @@ function Comments(props) {
             <br />
             {console.log("testing comments")}
 
-           
-        </div>
+             </div>
     )
 }
 
