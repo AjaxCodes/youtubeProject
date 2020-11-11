@@ -8,11 +8,13 @@ function RecommendedVideos(){
         <div className="RecommendedVideos">
             <h2>Recomended</h2>
             
-            <iframe className="videoPlayer"  id="ytplayer" type="text/html" width="640" height="360"
+            <iframe className="ytplayer" type="text/html" width="640" height="360"
             src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-            frameborder="0">
+            frameborder="0"></iframe>
 
-            </iframe>
+           
+            
+          
 
 
             <div className="recommendedVideos__videos">
