@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+src/
+./key.js
+=======
 node_modules/
 
  ./config/default.json
+>>>>>>> 28a3607e837a8da8630ed8333d19cb2c501f4dbf
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 

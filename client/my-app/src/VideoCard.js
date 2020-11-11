@@ -18,7 +18,7 @@ function VideoCard({image, title, channel,views, timestamp, channelImage}) {
         </div>
       </div>
     </div>
-    )
+    );
 }
 
 export default VideoCard;
