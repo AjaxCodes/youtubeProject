@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchBar() {
+export default function VideoPlayer() {
   return (
     <div>
       <iframe
@@ -9,8 +9,8 @@ export default function SearchBar() {
         type='text/html'
         width='640'
         height='360'
-        src='https://www.youtube.com/embed/Lwv3Hvr24JE?autoplay=1&origin=http://example.com'
-        frameborder='0'></iframe>
+        src='https://www.youtube.com/embed/Lwv3Hvr24JE?autoplay=1'
+        frameBorder='0'></iframe>
     </div>
   );
 }
