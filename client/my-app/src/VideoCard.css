@@ -26,5 +26,9 @@
     height:30px !important ;
     width: 30px !important;
 }
-
+.videoPlayer{
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 40px;
+}
 
