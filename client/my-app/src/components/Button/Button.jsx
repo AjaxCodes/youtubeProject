@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Button(props) {
-  return <button onClick={props.handleSubmit}>Search</button>;
+  return <button onSubmit={props.onSubmitButton}>Search</button>;
 }

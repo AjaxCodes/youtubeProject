@@ -9,7 +9,7 @@ export default function VideoPlayer() {
         type='text/html'
         width='640'
         height='360'
-        src='https://www.youtube.com/embed/Lwv3Hvr24JE?autoplay=1'
+        src='https://www.youtube.com/embed/Lwv3Hvr24JE'
         frameBorder='0'></iframe>
     </div>
   );
