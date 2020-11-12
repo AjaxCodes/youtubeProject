@@ -11,7 +11,7 @@ router.post('http://localhost:3000/api/comments/add', async (req, res) => {
         const Comment = new Comment({
             name: req.body.name,
             discription: req.body.discription,
-            category: req.body.category,
+            
         });
     
         await comment.save();
@@ -35,7 +35,7 @@ router.put('/:id', async (req, res) => { try {
         const comment = await Comment.findByIdAndUpdate( req.params.id,{
             name: req.body.name,
             discription: req.body.discription,
-            category: req.body.category, 
+             
         },
         { new: true }
     );

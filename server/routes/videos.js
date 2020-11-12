@@ -9,9 +9,8 @@ router.post('http://localhost:3000/api/videos/add', async (req, res) => {
             return res.status(400).send(error);
 
         const Video = new Video({
-            name: req.body.name,
-            discription: req.body.discription,
-            category: req.body.category,
+            id: req.body.name
+            
         });
     
         await video.save();
@@ -33,9 +32,8 @@ router.put('/:id', async (req, res) => { try {
         const { error } = validate(req.body);
         if (error) return res.status(400).send(error);
         const video = await Video.findByIdAndUpdate( req.params.id,{
-            name: req.body.name,
-            discription: req.body.discription,
-            category: req.body.category, 
+            id: req.body.name,
+            
         },
         { new: true }
     );
@@ -50,7 +48,7 @@ router.put('/:id', async (req, res) => { try {
         }
 }); 
 
-router.delete('http://localhost:3000/api/videos/:id', async (req, res) => { 
+router.delete('http://localhost:3000/api/movies/:id', async (req, res) => { 
     try {
 
     const video = await Video.findByIdAndRemove(req.params.id);
