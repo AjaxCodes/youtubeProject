@@ -1,8 +1,7 @@
 import React from "react";
 
 export default function VideoPlayer({ video }) {
-  if (!video) return <div>Loading</div>;
-  console.log("video detail: ", video.id.videoId);
+  if (!video) return <div></div>;
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
