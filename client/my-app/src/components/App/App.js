@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Video from "../Video/Video";
 import SearchBar from "../SearchBar/SearchBar";
 import axios from "axios";
-import apiKey from "../../api/apiKey";
+
+console.log(process.env.REACT_APP_API_KEY_YT);
 
 function App() {
   const handleSubmit = searchTerm => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&type=video&key=AIzaSyB-TOqHu5AM7wZxSaaSwuJEuZn_vZbeILU`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&type=video&key=${process.env.REACT_APP_API_KEY_YT}`
       )
       .then(response => {
         console.log(response);
