@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import {Button, Icon} from "semantic-ui-react";
-import './comments.css';
+import './comment.css';
 import axios from 'axios';
 
 export function Comments(props) {
