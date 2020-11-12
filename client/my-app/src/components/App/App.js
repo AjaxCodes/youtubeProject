@@ -5,16 +5,18 @@ import axios from "axios";
 import apiKey from "../../api/apiKey";
 
 function App() {
-  const handleSubmit = async searchTerm => {
-    try {
-      const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&=${searchTerm}&type=video&=${apiKey}`
-      );
-      console.log(response);
-      return response;
-    } catch (err) {
-      console.log(err.response);
-    }
+  const handleSubmit = searchTerm => {
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&type=video&key=AIzaSyB-TOqHu5AM7wZxSaaSwuJEuZn_vZbeILU`
+      )
+      .then(response => {
+        console.log(response);
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
   };
 
   return (

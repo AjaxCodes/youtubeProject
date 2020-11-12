@@ -6,14 +6,20 @@ export default function SearchBar(props) {
 
   const handleSearch = e => {
     e.preventDefault();
-    console.log(e.target.value);
+    console.log(searchTerm);
     props.onSubmit(searchTerm);
   };
 
   return (
     <div className='searchBar'>
-      <input type='text' id='input' onChange={e => setSearchTerm(e)} />
-      <Button onSubmitButton={handleSearch} />
+      <form onSubmit={handleSearch}>
+        <input
+          type='text'
+          id='input'
+          onChange={e => setSearchTerm(e.target.value)}
+        />
+        <Button type='submit' />
+      </form>
     </div>
   );
 }
