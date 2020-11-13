@@ -1,0 +1,28 @@
+.comment-card{
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 600px;
+}
+
+.comments-header {
+        display: inline-block;
+        margin-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+.addComment {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 50px;
+}      
+
+.form {
+     flex: 1;
+     }
+      
+.commentsSection {
+        display: flex;
+        flex-wrap: wrap;
+    }
