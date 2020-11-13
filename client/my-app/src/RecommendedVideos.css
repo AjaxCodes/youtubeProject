@@ -13,3 +13,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+.ytplayer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
