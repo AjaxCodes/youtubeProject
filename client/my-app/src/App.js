@@ -10,7 +10,8 @@ import "./SearchBar.css";
 import VideoList from "./VideoList";
 
 function App() {
-  const [video, setVideo] = useState(null);
+  const [selectVideo, setSelectVideo] = useState(null);
+  const [video, setVideo] = useState([]);
 
   const handleSubmit = searchTerm => {
     axios
@@ -18,7 +19,9 @@ function App() {
         `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&type=video&key=${process.env.REACT_APP_API_KEY_YT}`
       )
       .then(response => {
-        setVideo(response.data.items[0]);
+        console.log(response);
+        setSelectVideo(response.data.items[0]);
+        setVideo(response.data.items);
       })
       .catch(err => {
         console.log(err.response);
@@ -33,9 +36,9 @@ function App() {
       </div>
       <div className='app__page'>
         <Sidebar />
-        <RecommendedVideos video={video} />
-        {/* <VideoList videos={video} /> */}
-        <VideoCard video={video} />
+        {/* <RecommendedVideos video={video} /> */}
+        <VideoList videos={video} />
+        <VideoCard video={selectVideo} />
       </div>
     </div>
   );
