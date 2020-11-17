@@ -6,6 +6,7 @@ import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { Avatar } from "@material-ui/core";
+import SearchBar from "./SearchBar";
 
 function Header() {
   return (
@@ -18,12 +19,6 @@ function Header() {
           alt=''
         />
       </div>
-
-      <div className='header__input'>
-        <input placeholder='Search' type='text' />
-        <SearchIcon className='header__inputButton' onClick={handleSearch()} />
-      </div>
-
       <div className='header__icons'>
         <VideoCallIcon className='header__icon' />
         <AppsIcon className='header__icon' />
@@ -33,29 +28,5 @@ function Header() {
     </div>
   );
 }
-
-function handleSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = e => {
-    e.preventDefault();
-    props.onSubmit(searchTerm);
-  };
-
-  return (
-    <div className='searchBar'>
-      <form onSubmit={handleSearch}>
-        <input
-          type='text'
-          id='input'
-          onChange={e => setSearchTerm(e.target.value)}
-        />
-        <Button type='submit' onSubmit={props.onSubmit} />
-      </form>
-    </div>
-  );
-}
-
-export default handleSearch;
 
 export default Header;
