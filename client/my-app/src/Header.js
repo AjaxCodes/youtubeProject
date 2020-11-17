@@ -6,6 +6,7 @@ import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { Avatar } from "@material-ui/core";
+import SearchBar from "./SearchBar";
 
 function Header() {
   return (
@@ -18,12 +19,6 @@ function Header() {
           alt=''
         />
       </div>
-
-      <div className='header__input'>
-        <input placeholder='Search' type='text' />
-        <SearchIcon className='header__inputButton' />
-      </div>
-
       <div className='header__icons'>
         <VideoCallIcon className='header__icon' />
         <AppsIcon className='header__icon' />
@@ -33,6 +28,5 @@ function Header() {
     </div>
   );
 }
-
 
 export default Header;
