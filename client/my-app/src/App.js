@@ -19,13 +19,16 @@ function App() {
         `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&type=video&key=${process.env.REACT_APP_API_KEY_YT}`
       )
       .then(response => {
-        console.log(response);
         setSelectVideo(response.data.items[0]);
         setVideo(response.data.items);
       })
       .catch(err => {
         console.log(err.response);
       });
+  };
+
+  const onVideoSelect = video => {
+    setSelectVideo(video);
   };
 
   return (
@@ -36,9 +39,10 @@ function App() {
       </div>
       <div className='app__page'>
         <Sidebar />
-        {/* <RecommendedVideos video={video} /> */}
-        <VideoList videos={video} />
         <VideoCard video={selectVideo} />
+      </div>
+      <div className='recVideos'>
+        <VideoList videos={video} onVideoSelect={onVideoSelect} />
       </div>
     </div>
   );
