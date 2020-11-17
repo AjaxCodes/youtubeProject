@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
@@ -21,7 +21,7 @@ function Header() {
 
       <div className='header__input'>
         <input placeholder='Search' type='text' />
-        <SearchIcon className='header__inputButton' onClick={handleSearch()} />
+        <SearchIcon className='header__inputButton' />
       </div>
 
       <div className='header__icons'>
@@ -34,28 +34,5 @@ function Header() {
   );
 }
 
-function handleSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = e => {
-    e.preventDefault();
-    props.onSubmit(searchTerm);
-  };
-
-  return (
-    <div className='searchBar'>
-      <form onSubmit={handleSearch}>
-        <input
-          type='text'
-          id='input'
-          onChange={e => setSearchTerm(e.target.value)}
-        />
-        <Button type='submit' onSubmit={props.onSubmit} />
-      </form>
-    </div>
-  );
-}
-
-export default handleSearch;
 
 export default Header;
