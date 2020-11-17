@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./sidebar";
-import RecommendedVideos from "./RecommendedVideos";
 import axios from "axios";
 import VideoCard from "./VideoCard";
 import SearchBar from "./SearchBar";
@@ -29,21 +28,18 @@ function App() {
 
   const onVideoSelect = video => {
     setSelectVideo(video);
+    console.log("click");
   };
 
   return (
     <div className='app'>
       <Header />
-      <div className='searchBar'>
-        <SearchBar onSubmit={handleSubmit} />
-      </div>
+      <SearchBar onSubmit={handleSubmit} />
       <div className='app__page'>
         <Sidebar />
         <VideoCard video={selectVideo} />
       </div>
-      <div className='recVideos'>
-        <VideoList videos={video} onVideoSelect={onVideoSelect} />
-      </div>
+      <VideoList videos={video} onVideoSelect={onVideoSelect} />
     </div>
   );
 }
