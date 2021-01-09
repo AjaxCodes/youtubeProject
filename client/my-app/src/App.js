@@ -38,6 +38,15 @@ function App() {
       <div className='app__page'>
         <Sidebar />
         <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        <VideoCard video={selectVideo} />
+        
       </div>
       <VideoList videos={video} onVideoSelect={onVideoSelect} />
     </div>
